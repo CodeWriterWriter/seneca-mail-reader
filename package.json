@@ -1,0 +1,32 @@
+{
+  "name": "seneca-mail-reader",
+  "version": "0.1.0",
+  "description": "raw mail reader with streaming support",
+  "main": "mail-reader.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha test --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nherment/seneca-mail-reader.git"
+  },
+  "keywords": [
+    "mail",
+    "seneca",
+    "reader",
+    "parser"
+  ],
+  "author": "Nicolas Herment <nherment@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nherment/seneca-mail-reader/issues"
+  },
+  "homepage": "https://github.com/nherment/seneca-mail-reader",
+  "dependencies": {
+    "uuid": "1.4.1",
+    "mailparser": "0.4.2"
+  },
+  "devDependencies": {
+    "mocha": "1.18.2"
+  }
+}
