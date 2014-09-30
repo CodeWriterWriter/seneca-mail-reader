@@ -79,7 +79,6 @@ module.exports = function(options) {
 
   seneca.add({role: pluginName, cmd: 'writeEnd'}, function(args, done) {
     args.connection.parser.end()
-    args.connection.parser.removeListener('attachment', redirectAttachmentStreamToSeneca)
     done()
   })
 
