@@ -22,8 +22,7 @@ module.exports = function(options) {
   })
 
   seneca.add({role: pluginName, cmd: 'attachment'}, function(args, done) {
-    var output = fs.createWriteStream(args.attachment.generatedFileName)
-    args.attachment.stream.pipe(output)
+    // call done()
     done()
   })
 
