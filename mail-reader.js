@@ -3,6 +3,7 @@ var MailParser = require('mailparser').MailParser
 var fs = require('fs')
 var uuid = require('uuid')
 var _ = require('lodash');
+var stream = require('stream');
 
 var pluginName = 'mail-reader'
 
@@ -51,6 +52,10 @@ module.exports = function(options) {
       };
       args.connection.parser.on('attachment', function (attachment) {
         attachmentCount++;
+        // Replace the attachment stream with a passthrough
+        var memStream = new stream.PassThrough();
+        attachment.stream.pipe(memStream);
+        attachment.stream = memStream;
         // Redirect attachment to seneca
         seneca.act({
           role: pluginName,
