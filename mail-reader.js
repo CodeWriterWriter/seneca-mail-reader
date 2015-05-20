@@ -11,6 +11,10 @@ module.exports = function(options) {
 
   var seneca = this
 
+  seneca.add({ init: pluginName }, function (args, done) {
+    done();
+  });
+
   seneca.add({role: pluginName, cmd: 'validateSender'}, function(args, done) {
     // call done() with an error to invalidate the sender
     done()
